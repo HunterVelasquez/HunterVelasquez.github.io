@@ -104,11 +104,11 @@ button { font: inherit; color: inherit; }
   background: radial-gradient(circle, var(--glow3) 0, transparent 68%); animation: orbit2 14s linear infinite; }
 /* light pooling at the bottom edge */
 .hero-bg .g3 { width: 100vmin; height: 38vmin; left: calc(50% - 50vmin); bottom: -14vmin;
-  background: radial-gradient(ellipse, var(--haze) 0, transparent 68%); animation: swell 6.5s ease-in-out infinite; }
+  background: radial-gradient(ellipse, var(--haze) 0, transparent 68%); animation: swell 5.5s ease-in-out infinite; }
 /* deeper green glow in both bottom corners, swelling together */
 .hero-bg .c1, .hero-bg .c2 { width: calc(62vmax - 16vmax * var(--mix)); height: calc(41vmax - 11vmax * var(--mix)); bottom: calc(-24vmax + 4vmax * var(--mix));
   --corner: color-mix(in srgb, #8fbf72, #5c230c var(--m));
-  background: radial-gradient(ellipse, var(--corner) 0, var(--corner) 22%, transparent 66%); animation: cornerSwell 7s ease-in-out infinite; }
+  background: radial-gradient(ellipse, var(--corner) 0, var(--corner) 22%, transparent 66%); animation: cornerSwell 5.5s ease-in-out infinite; }
 .hero-bg .c1 { left: calc(-24vmax + 4vmax * var(--mix)); transform-origin: 20% 80%; }
 .hero-bg .c2 { right: calc(-24vmax + 4vmax * var(--mix)); transform-origin: 80% 80%; }
 @keyframes cornerSwell { 0%, 100% { transform: scale(.82); opacity: .55; } 50% { transform: scale(1.26); opacity: 1; } }
