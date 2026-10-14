@@ -2,7 +2,9 @@
 (function () {
   var D = window.HV, $ = function (id) { return document.getElementById(id); };
   var params = new URLSearchParams(location.search);
-  var mode = params.get('mode') === 'film' ? 'film' : 'build';
+  // Start on whatever side was last chosen (a ?mode= link wins, then the saved choice, then Engineering).
+  var saved = null; try { saved = localStorage.getItem('hv-mode'); } catch (e) {}
+  var mode = (params.get('mode') || saved) === 'film' ? 'film' : 'build';
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
   $('star').innerHTML = window.HV_STAR;
 
