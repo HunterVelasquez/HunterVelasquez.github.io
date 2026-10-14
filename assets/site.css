@@ -147,8 +147,8 @@ body.film .process { background: #0d0d10; }
 .case h2 { font-size: clamp(36px, 3.6vw, 72px); }
 .case .text p { font-size: clamp(14px, .95vw, 18px); line-height: 1.6; }
 .case .text .pill { align-self: flex-start; margin-top: 8px; }
-.case .pic { aspect-ratio: 2.35 / 1; border-radius: 4px; overflow: hidden; }
-.case .pic img { width: 100%; height: 100%; object-fit: cover; }
+.case .pic { position: relative; aspect-ratio: 2.35 / 1; border-radius: 4px; overflow: hidden; }
+.case .pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 @media (max-width: 860px) { .case { grid-template-columns: 1fr; } .case .text .pill { margin-top: 8px; } }
 
 /* featured slider (always dark) */
