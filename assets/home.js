@@ -12,7 +12,7 @@
     $('caps').innerHTML = c.services.map(function (s) { return '<div class="cap"><h3>' + esc(s.title) + '</h3><p>' + esc(s.body) + '</p></div>'; }).join('');
     $('stats').innerHTML = c.stats.map(function (s) { return '<div class="stat"><b>' + esc(s[0]) + '</b><span>' + esc(s[1]) + '</span></div>'; }).join('');
     var cs = D.case[m];
-    $('caseImg').src = cs.img; $('caseImg').alt = c.caseTitle;
+    $('caseImg').src = cs.img; $('caseImg').alt = c.caseTitle; $('caseImg').style.objectPosition = cs.pos || '50% 50%';
     $('caseBtn').href = cs.link;
     // About reel
     var a = D.about[m], v = $('reelVideo');
@@ -32,41 +32,77 @@
     document.title = m === 'film' ? 'Hunter Velasquez | Photo/Video' : 'Hunter Velasquez | Engineering';
   }
 
-  // Switch: click, keyboard, or drag the knob.
-  var track = document.querySelector('.track'), knob = track.querySelector('.knob'), sides = document.querySelectorAll('.switch .side');
-  function paintSwitch(m) {
-    track.setAttribute('aria-checked', m === 'film'); knob.style.left = m === 'film' ? '54%' : '4%';
-    sides.forEach(function (s) { s.classList.toggle('on', s.getAttribute('data-to') === m); });
-  }
-  function setMode(m, instant) {
-    if (m === mode && !instant) return;
-    mode = m; paintSwitch(m);
-    document.body.classList.toggle('film', m === 'film');
+  // Switch: click, keyboard, or drag the knob. --mix (0 = Engineering, 1 = Photo/Video) blends every color,
+  // so dragging slides the whole page between the two looks; the words swap when it crosses the middle.
+  var body = document.body, track = document.querySelector('.track'), knob = track.querySelector('.knob'), sides = document.querySelectorAll('.switch .side');
+  var mix = mode === 'film' ? 1 : 0, anim = null, pending = null;
+  function remember(m) {
+    try { localStorage.setItem('hv-mode', m); } catch (e) {}
     var u = new URL(location.href); if (m === 'film') u.searchParams.set('mode', 'film'); else u.searchParams.delete('mode');
     history.replaceState(null, '', u);
-    if (instant) { fill(m); return; }
-    document.body.classList.add('swapping');
-    setTimeout(function () { fill(m); document.body.classList.remove('swapping'); }, 230);
   }
-  sides.forEach(function (s) { s.addEventListener('click', function () { setMode(s.getAttribute('data-to')); }); });
+  function swapTo(m) {
+    mode = m; body.classList.toggle('film', m === 'film');
+    track.setAttribute('aria-checked', m === 'film');
+    sides.forEach(function (s) { s.classList.toggle('on', s.getAttribute('data-to') === m); });
+    remember(m);
+    if (pending) return;
+    body.classList.add('swapping');
+    pending = setTimeout(function () { pending = null; fill(mode); body.classList.remove('swapping'); }, 230);
+  }
+  function applyMix(v) {
+    mix = Math.max(0, Math.min(1, v));
+    body.style.setProperty('--mix', mix.toFixed(3));
+    knob.style.left = (4 + 50 * mix) + '%';
+    var m = mix >= .5 ? 'film' : 'build'; if (m !== mode) swapTo(m);
+  }
+  function animateTo(target) {
+    cancelAnimationFrame(anim);
+    var from = mix, dist = Math.abs(target - from); if (!dist) return;
+    var dur = 300 + 600 * dist, t0 = performance.now();
+    var ease = function (t) { return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; };
+    (function frame(now) {
+      var t = Math.min(1, (now - t0) / dur); applyMix(from + (target - from) * ease(t));
+      if (t < 1) anim = requestAnimationFrame(frame);
+    })(t0);
+  }
+  sides.forEach(function (s) { s.addEventListener('click', function () { animateTo(s.getAttribute('data-to') === 'film' ? 1 : 0); }); });
   var drag = null;
-  track.addEventListener('pointerdown', function (e) { drag = { x: e.clientX, moved: false }; track.setPointerCapture(e.pointerId); });
+  track.addEventListener('pointerdown', function (e) { cancelAnimationFrame(anim); drag = { x: e.clientX, moved: false }; track.setPointerCapture(e.pointerId); });
   track.addEventListener('pointermove', function (e) {
-    if (!drag) return; var dx = e.clientX - drag.x; if (Math.abs(dx) < 4 && !drag.moved) return;
+    if (!drag) return; if (!drag.moved && Math.abs(e.clientX - drag.x) < 4) return;
     drag.moved = true; track.classList.add('dragging');
     var r = track.getBoundingClientRect(), kw = knob.offsetWidth, min = r.width * .04, max = r.width * .96 - kw;
-    var x = Math.max(min, Math.min(max, e.clientX - r.left - kw / 2)); knob.style.left = x + 'px'; drag.frac = (x - min) / (max - min);
+    applyMix((e.clientX - r.left - kw / 2 - min) / (max - min));
   });
-  track.addEventListener('pointerup', function () {
+  var release = function () {
     if (!drag) return; track.classList.remove('dragging');
-    var m = drag.moved ? (drag.frac >= .5 ? 'film' : 'build') : (mode === 'film' ? 'build' : 'film');
-    drag = null; if (m === mode) paintSwitch(m); else setMode(m);
-  });
+    var moved = drag.moved; drag = null;
+    animateTo(moved ? (mix >= .5 ? 1 : 0) : (mode === 'film' ? 0 : 1));
+  };
+  track.addEventListener('pointerup', release); track.addEventListener('pointercancel', release);
   track.addEventListener('keydown', function (e) {
-    if (e.key === 'ArrowRight') { e.preventDefault(); setMode('film'); }
-    if (e.key === 'ArrowLeft') { e.preventDefault(); setMode('build'); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); animateTo(1); }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); animateTo(0); }
   });
-  track.addEventListener('click', function (e) { if (e.detail === 0) setMode(mode === 'film' ? 'build' : 'film'); }); // keyboard Enter/Space
+  track.addEventListener('click', function (e) { if (e.detail === 0) animateTo(mode === 'film' ? 0 : 1); }); // keyboard Enter/Space
+
+  // Process statement leans gently toward the pointer.
+  var proc = $('process'), stmt = proc.querySelector('.stmt'), tilt = { x: 0, y: 0, tx: 0, ty: 0 }, tiltOn = false;
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    proc.addEventListener('pointermove', function (e) {
+      var r = stmt.getBoundingClientRect();
+      tilt.tx = Math.max(-1, Math.min(1, (e.clientX - (r.left + r.width / 2)) / (r.width / 2)));
+      tilt.ty = Math.max(-1, Math.min(1, (e.clientY - (r.top + r.height / 2)) / (r.height * 1.2)));
+      if (!tiltOn) { tiltOn = true; requestAnimationFrame(lean); }
+    });
+    proc.addEventListener('pointerleave', function () { tilt.tx = 0; tilt.ty = 0; });
+  }
+  function lean() {
+    tilt.x += (tilt.tx - tilt.x) * .08; tilt.y += (tilt.ty - tilt.y) * .08;
+    stmt.style.transform = 'rotateY(' + (tilt.x * 9).toFixed(2) + 'deg) rotateX(' + (-tilt.y * 7).toFixed(2) + 'deg) translate3d(' + (tilt.x * 6).toFixed(1) + 'px,' + (tilt.y * 4).toFixed(1) + 'px,0)';
+    if (Math.abs(tilt.x) + Math.abs(tilt.y) + Math.abs(tilt.tx) + Math.abs(tilt.ty) > .002) requestAnimationFrame(lean); else { tiltOn = false; stmt.style.transform = ''; }
+  }
 
   // Reel fades in once it is actually playing; resumes when the tab comes back.
   var rv = $('reelVideo');
@@ -80,6 +116,6 @@
   var step = function (d) { var w = sl.querySelector('.slide'); sl.scrollBy({ left: d * (w ? w.getBoundingClientRect().width + 20 : 400), behavior: 'smooth' }); };
   $('prevSlide').addEventListener('click', function () { step(-1); }); $('nextSlide').addEventListener('click', function () { step(1); });
 
-  document.body.classList.toggle('film', mode === 'film');
-  paintSwitch(mode); fill(mode);
+  body.classList.toggle('film', mode === 'film');
+  applyMix(mix); swapTo(mode); clearTimeout(pending); pending = null; body.classList.remove('swapping'); fill(mode);
 })();

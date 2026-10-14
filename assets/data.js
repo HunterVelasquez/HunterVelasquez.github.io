@@ -1022,6 +1022,7 @@ window.HV = {
  "case": {
   "build": {
    "img": "/media/img/bloomables-kittyfly-puppyfly-2.jpg",
+   "pos": "50% 28%",
    "link": "https://www.spinmaster.com/en-US/brands/hatchimals/"
   },
   "film": {

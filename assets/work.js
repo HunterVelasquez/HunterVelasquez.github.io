@@ -7,7 +7,6 @@
   var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
   var params = new URLSearchParams(location.search);
 
-  $('count').textContent = P.length + ' projects';
   $('grid').innerHTML = P.map(function (p, i) {
     var m = p.media[0], still = m.type === 'image' ? m.src : m.poster;
     return '<button type="button" class="tile" data-i="' + i + '"><div class="hp"><img src="' + still + '" alt="" loading="lazy">' +
