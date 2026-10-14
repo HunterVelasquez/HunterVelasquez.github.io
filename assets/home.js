@@ -12,7 +12,7 @@
     $('caps').innerHTML = c.services.map(function (s) { return '<div class="cap"><h3>' + esc(s.title) + '</h3><p>' + esc(s.body) + '</p></div>'; }).join('');
     $('stats').innerHTML = c.stats.map(function (s) { return '<div class="stat"><b>' + esc(s[0]) + '</b><span>' + esc(s[1]) + '</span></div>'; }).join('');
     var cs = D.case[m];
-    $('caseImg').src = cs.img; $('caseImg').alt = c.caseTitle;
+    $('caseImg').src = cs.img; $('caseImg').alt = c.caseTitle; $('caseImg').style.objectPosition = cs.pos || '50% 50%';
     $('caseBtn').href = cs.link;
     // About reel
     var a = D.about[m], v = $('reelVideo');
