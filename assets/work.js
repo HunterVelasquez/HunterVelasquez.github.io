@@ -8,7 +8,7 @@
   var params = new URLSearchParams(location.search);
 
   $('grid').innerHTML = P.map(function (p, i) {
-    var m = p.media[0], still = m.type === 'image' ? m.src : m.poster;
+    var m = p.media[0], still = p.thumb || (m.type === 'image' ? m.src : m.poster);
     return '<button type="button" class="tile" data-i="' + i + '"><div class="hp"><img src="' + still + '" alt="" loading="lazy">' +
       (m.type !== 'image' ? '<span class="play"></span>' : '') + '</div><h3>' + esc(p.t) + '</h3><span class="label muted">' + esc(LABEL[p.c] || p.c) + '</span></button>';
   }).join('');

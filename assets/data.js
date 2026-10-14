@@ -631,7 +631,8 @@ window.HV = {
      "type": "image",
      "src": "/media/img/remote-control-bed-3.jpg"
     }
-   ]
+   ],
+   "thumb": "/media/img/remote-control-bed-3.jpg"
   },
   {
    "slug": "hand-built-electric-guitar",
@@ -664,7 +665,8 @@ window.HV = {
      "type": "image",
      "src": "/media/img/hand-built-electric-guitar-3.jpg"
     }
-   ]
+   ],
+   "thumb": "/media/img/hand-built-electric-guitar-1.jpg"
   },
   {
    "slug": "electric-coffin-on-wheels",
@@ -693,7 +695,8 @@ window.HV = {
      "type": "image",
      "src": "/media/img/electric-coffin-on-wheels-2.jpg"
     }
-   ]
+   ],
+   "thumb": "/media/img/electric-coffin-on-wheels-2.jpg"
   },
   {
    "slug": "electric-vs-gas-ride-on-jeeps",
@@ -718,7 +721,8 @@ window.HV = {
      "type": "image",
      "src": "/media/img/electric-vs-gas-ride-on-jeeps-1.jpg"
     }
-   ]
+   ],
+   "thumb": "/media/img/electric-vs-gas-ride-on-jeeps-1.jpg"
   },
   {
    "slug": "back-to-the-future-hoverboard",
@@ -749,7 +753,8 @@ window.HV = {
      "type": "image",
      "src": "/media/img/back-to-the-future-hoverboard-2.jpg"
     }
-   ]
+   ],
+   "thumb": "/media/img/back-to-the-future-hoverboard-1.jpg"
   },
   {
    "slug": "cactus-headphone-stand",
@@ -779,7 +784,8 @@ window.HV = {
      "type": "image",
      "src": "/media/img/cactus-headphone-stand-2.jpg"
     }
-   ]
+   ],
+   "thumb": "/media/img/cactus-headphone-stand-1.png"
   }
  ],
  "content": {
