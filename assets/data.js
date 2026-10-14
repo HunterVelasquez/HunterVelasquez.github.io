@@ -68,7 +68,7 @@ window.HV = {
     {
      "label": "Photo/Video",
      "s": "“I Built a Micro Camper for my E-Bike!” · 2.2M views · filmed and edited",
-     "body": "The most-watched edit on the channel. A shop build and an overnight trip up a Colorado mountain cut into a 27-minute story. A build, a breakdown and a payoff without losing pace.",
+     "body": "The most-watched edit on the channel. A shop build and an overnight trip up a Colorado mountain cut into a 27-minute story. A build, a breakdown and a payoff without losing pace.\n\n2025",
      "link": "https://youtu.be/xrQ6BVzsXnU",
      "cta": "Watch the video",
      "did": [
@@ -169,7 +169,7 @@ window.HV = {
     {
      "label": "Photo/Video",
      "s": "“I Built a Fake Electrical Box for Stealth Camping” · 588K views · filmed and edited",
-     "body": "A full build paced into a 24-hour stunt hidden in a grocery store parking lot, balancing shop footage, in-box confessionals and the tension of almost getting caught.",
+     "body": "A full build paced into a 24-hour stunt hidden in a grocery store parking lot, balancing shop footage, in-box confessionals and the tension of almost getting caught.\n\n2026",
      "link": "https://youtu.be/yx43wZvWje4",
      "cta": "Watch the video",
      "did": [
@@ -267,7 +267,7 @@ window.HV = {
     {
      "label": "Photo/Video",
      "s": "“I Built a Snowmobile Camper to Survive Extreme Cold!” · 536K views · filmed and edited",
-     "body": "Shot on location in the Colorado backcountry, riding in by snowmobile for night scenes in the cold, then cut into one story from build to overnight.",
+     "body": "Shot on location in the Colorado backcountry, riding in by snowmobile for night scenes in the cold, then cut into one story from build to overnight.\n\n2026",
      "link": "https://youtu.be/7dNlNR6ds7Y",
      "cta": "Watch the video",
      "did": [
@@ -337,7 +337,7 @@ window.HV = {
     {
      "label": "Photo/Video",
      "s": "“My Homemade Jet Longboard is Probably Illegal…” · 30K views · filmed and edited",
-     "body": "A client build edited from first sketches to the Sickos' first ride in Oregon, keeping the engineering clear without slowing the story down.",
+     "body": "A client build edited from first sketches to the Sickos' first ride in Oregon, keeping the engineering clear without slowing the story down.\n\n2026",
      "link": "https://youtu.be/eVdmNJ1BYao",
      "cta": "Watch the video",
      "did": [
@@ -435,7 +435,7 @@ window.HV = {
     {
      "label": "Photo/Video",
      "s": "“Building Santa's Sleigh in Real Life” · 16K views · filmed and edited",
-     "body": "The Christmas edit, finished through a five-day power outage and a failing drive: snowmobile chase footage cut into a present-delivery race against Santa's time.",
+     "body": "The Christmas edit, finished through a five-day power outage and a failing drive: snowmobile chase footage cut into a present-delivery race against Santa's time.\n\n2025",
      "link": "https://youtu.be/yuskEW_rYhM",
      "cta": "Watch the video",
      "did": [
@@ -509,7 +509,7 @@ window.HV = {
    "c": "Photo/Video",
    "t": "Turning my Boatmobile into a Sports Car!",
    "s": "61K views · filmed and edited",
-   "body": "A month of engine-swap footage, a 1,000-mile drive across two states and a wildfire evacuation shaped into one story with a clear payoff in the desert.",
+   "body": "A month of engine-swap footage, a 1,000-mile drive across two states and a wildfire evacuation shaped into one story with a clear payoff in the desert.\n\n2026",
    "link": "https://youtu.be/tfozKTXAvSs",
    "cta": "Watch",
    "note": "Made with Louis Weisz for his YouTube channel. The videos are cut so it reads as Louis working alone; staying off camera and out of the story was part of the job. Below is what Hunter actually designed, built, shot and cut.",
@@ -542,7 +542,7 @@ window.HV = {
    "c": "Photo/Video",
    "t": "I Upgraded my E-Bike Camper to Reach this Abandoned Railroad!",
    "s": "28K views · edited",
-   "body": "A solo off-road trip, a blown tire and a change of plans turned into an adventure story that still reaches the highest abandoned railroad station in America.",
+   "body": "A solo off-road trip, a blown tire and a change of plans turned into an adventure story that still reaches the highest abandoned railroad station in America.\n\n2026",
    "link": "https://youtu.be/akSeP-MJorE",
    "cta": "Watch",
    "note": "Made with Louis Weisz for his YouTube channel. Louis shot this trip on his own; the edit is Hunter’s.",
@@ -572,7 +572,7 @@ window.HV = {
    "c": "Photo/Video",
    "t": "I Tested Every Way to Make Fire (1,000,000 BC to 2026)",
    "s": "19K views · filmed and edited",
-   "body": "Nearly 20 fire-making methods structured into a timeline from 1,000,000 BC to today, with a rating for each, so a history lesson plays like a countdown.",
+   "body": "Nearly 20 fire-making methods structured into a timeline from 1,000,000 BC to today, with a rating for each, so a history lesson plays like a countdown.\n\n2026",
    "link": "https://youtu.be/2TbEXFuhkXQ",
    "cta": "Watch",
    "note": "Made with Louis Weisz for his YouTube channel. The videos are cut so it reads as Louis working alone; staying off camera and out of the story was part of the job. Below is what Hunter actually designed, built, shot and cut.",
