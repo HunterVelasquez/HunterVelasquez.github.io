@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work | Hunter Velasquez</title>
+<meta name="description" content="Toy mechanisms at retail, builds and edits for a 744K-subscriber YouTube channel, a feature documentary, and earlier engineering builds.">
+<meta property="og:title" content="Work | Hunter Velasquez">
+<meta property="og:image" content="/media/img/jet-powered-longboard-poster.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;1,400&family=Poppins:wght@200;300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body class="film">
+<header id="site-header"></header>
+<main>
+  <div class="page-top">
+    <h1 id="count">Projects</h1>
+    <span class="label">3 toys at retail &middot; 3.4M+ views &middot; a feature documentary &middot; engineering, photo/video and earlier builds</span>
+    <div class="filters" role="group" aria-label="Filter projects">
+      <button type="button" data-f="" aria-pressed="true">All</button>
+      <button type="button" data-f="engineering" aria-pressed="false">Engineering</button>
+      <button type="button" data-f="film" aria-pressed="false">Photo/Video</button>
+      <button type="button" data-f="earlier" aria-pressed="false">Earlier builds</button>
+    </div>
+  </div>
+  <div class="grid" id="grid"></div>
+</main>
+<footer id="site-footer"></footer>
+
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-labelledby="vTitle" hidden>
+  <div class="vbox">
+    <button class="vclose" id="vClose" aria-label="Close">&times;</button>
+    <div class="stage">
+      <div class="view" id="vView"></div>
+      <button class="vnav prev hide" id="vPrev" aria-label="Previous">&#8249;</button>
+      <button class="vnav next hide" id="vNext" aria-label="Next">&#8250;</button>
+      <div class="thumbs" id="vThumbs"></div>
+    </div>
+    <div class="info">
+      <div class="cat" id="vCat"></div>
+      <h2 id="vTitle"></h2>
+      <div class="note hide" id="vNote"></div>
+      <div class="tabs hide" id="vTabs" role="tablist"></div>
+      <div class="short" id="vShort"></div>
+      <div class="body" id="vBody"></div>
+      <div class="h3 hide" id="vDidH">Contributions</div>
+      <ul class="hide" id="vDid"></ul>
+      <div class="h3 hide" id="vToolsH">Skills &amp; tools</div>
+      <div class="chips hide" id="vTools"></div>
+      <a class="pill hide" id="vCta" target="_blank" rel="noopener"></a>
+    </div>
+  </div>
+</div>
+
+<script src="/assets/data.js"></script>
+<script src="/assets/site.js"></script>
+<script src="/assets/work.js"></script>
+</body>
+</html>
