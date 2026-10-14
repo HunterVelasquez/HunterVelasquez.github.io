@@ -87,20 +87,28 @@ button { font: inherit; color: inherit; }
 /* ---------- hero ---------- */
 .hero { position: relative; min-height: 100vh; min-height: 100svh; display: grid; place-items: center; overflow: hidden; padding: 110px var(--pad) 90px; isolation: isolate; }
 .hero-bg { position: absolute; inset: 0; z-index: -1; overflow: hidden;
-  --glow: color-mix(in srgb, #bddaa7, #5a2410 var(--m));
-  --glow2: color-mix(in srgb, #cfe6bd, #8a3612 var(--m));
-  --haze: color-mix(in srgb, rgba(236, 240, 232, .95), rgba(255, 140, 70, .16) var(--m));
-  background: linear-gradient(180deg, color-mix(in srgb, #d5d8d1, #0d0d10 var(--m)) 0%, color-mix(in srgb, #cfd8c6, #0d0d10 var(--m)) 55%, color-mix(in srgb, #c3d9b0, #140b07 var(--m)) 100%); }
-.hero-bg i { position: absolute; display: block; border-radius: 50%; will-change: transform; }
-.hero-bg .g1 { width: 74vmin; height: 74vmin; left: calc(50% - 37vmin); top: calc(46% - 37vmin);
-  background: radial-gradient(circle, var(--glow) 0, var(--glow) 50%, transparent 71%); animation: breathe 7s ease-in-out infinite; }
-.hero-bg .g2 { width: 46vmin; height: 46vmin; left: calc(50% - 23vmin); top: calc(46% - 23vmin); opacity: .7; filter: blur(6vmin);
-  background: radial-gradient(circle, var(--glow2) 0, transparent 70%); animation: orbit 16s linear infinite; }
-.hero-bg .g3 { width: 90vmin; height: 34vmin; left: calc(50% - 45vmin); bottom: -12vmin;
-  background: radial-gradient(ellipse, var(--haze) 0, transparent 68%); animation: swell 9s ease-in-out infinite; }
-@keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.08); } }
-@keyframes orbit { from { transform: rotate(0deg) translateX(9vmin) rotate(0deg); } to { transform: rotate(360deg) translateX(9vmin) rotate(-360deg); } }
-@keyframes swell { 0%, 100% { transform: scale(1, 1); opacity: .9; } 50% { transform: scale(1.12, 1.25); opacity: 1; } }
+  --glow: color-mix(in srgb, #b2d595, #6a2a10 var(--m));
+  --glow2: color-mix(in srgb, #e4f5d2, #c2531a var(--m));
+  --glow3: color-mix(in srgb, #94c27a, #3a1508 var(--m));
+  --haze: color-mix(in srgb, rgba(244, 246, 240, .98), rgba(255, 140, 70, .22) var(--m));
+  background: linear-gradient(180deg, color-mix(in srgb, #dadcd6, #0d0d10 var(--m)) 0%, color-mix(in srgb, #d3dacb, #0d0d10 var(--m)) 55%, color-mix(in srgb, #c4d8b2, #140b07 var(--m)) 100%); }
+.hero-bg i { position: absolute; display: block; border-radius: 50%; will-change: transform, opacity; }
+/* main glow: grows and shrinks like the old site's pulsing circle */
+.hero-bg .g1 { width: 70vmin; height: 70vmin; left: calc(50% - 35vmin); top: calc(46% - 35vmin);
+  background: radial-gradient(circle, var(--glow) 0, var(--glow) 48%, transparent 70%); animation: breathe 5.5s ease-in-out infinite; }
+/* bright core drifting around inside the glow */
+.hero-bg .g2 { width: 44vmin; height: 44vmin; left: calc(50% - 22vmin); top: calc(46% - 22vmin); opacity: .9; filter: blur(4vmin);
+  background: radial-gradient(circle, var(--glow2) 0, transparent 68%); animation: orbit 11s linear infinite; }
+/* deeper-toned blob circling the other way, so the color visibly shifts */
+.hero-bg .g4 { width: 38vmin; height: 38vmin; left: calc(50% - 19vmin); top: calc(46% - 19vmin); opacity: .75; filter: blur(5vmin);
+  background: radial-gradient(circle, var(--glow3) 0, transparent 68%); animation: orbit2 14s linear infinite; }
+/* light pooling at the bottom edge */
+.hero-bg .g3 { width: 100vmin; height: 38vmin; left: calc(50% - 50vmin); bottom: -14vmin;
+  background: radial-gradient(ellipse, var(--haze) 0, transparent 68%); animation: swell 6.5s ease-in-out infinite; }
+@keyframes breathe { 0%, 100% { transform: scale(.9); } 50% { transform: scale(1.16); } }
+@keyframes orbit { from { transform: rotate(0deg) translateX(15vmin) rotate(0deg) scale(1); } 50% { transform: rotate(180deg) translateX(15vmin) rotate(-180deg) scale(1.2); } to { transform: rotate(360deg) translateX(15vmin) rotate(-360deg) scale(1); } }
+@keyframes orbit2 { from { transform: rotate(360deg) translateX(13vmin) rotate(-360deg); } to { transform: rotate(0deg) translateX(13vmin) rotate(0deg); } }
+@keyframes swell { 0%, 100% { transform: scale(.92, .85); opacity: .75; } 50% { transform: scale(1.15, 1.35); opacity: 1; } }
 .hero-inner { display: flex; flex-direction: column; align-items: center; gap: clamp(28px, 4vh, 56px); text-align: center; }
 .hero h1 { font-size: clamp(42px, 6.25vw, 112px); line-height: 1.12; max-width: 20ch; text-wrap: balance; }
 .down { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); width: 44px; height: 64px; display: grid; place-items: center; color: var(--ink); }
