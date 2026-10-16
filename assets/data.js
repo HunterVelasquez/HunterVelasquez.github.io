@@ -600,6 +600,36 @@ window.HV = {
    ]
   },
   {
+   "slug": "i-rode-1000-miles-on-the-smallest-electric-vehicles",
+   "c": "Photo/Video",
+   "t": "I Rode 1000 Miles on the SMALLEST Electric Vehicles",
+   "s": "877K views · filmed and field produced",
+   "body": "Eight days and 1,000 miles from Boulder to Austin on an electric cooler, a unicycle, skateboards, e-bikes and more, through snow, black ice and highway shoulders. Shot run-and-gun from the chase car, the roadside and the air.\n\n2024",
+   "link": "https://youtu.be/S-gyK7PNOlI",
+   "cta": "Watch",
+   "note": "Made with Louis Weisz for his YouTube channel. Hunter rode along for all eight days as videographer and field producer.",
+   "did": [
+    "Filmed the full trip: chase-car and leapfrog highway shots, roadside passes, night rides, drone and in-car conversations",
+    "Drove the chase car, lighting the road ahead on night stretches",
+    "Re-planned the route and goals with Louis when weather and traffic made the original plan unsafe",
+    "Ran the daily curveball-vehicle surprises and set up the Tesla rendezvous that got the trip to Austin on time"
+   ],
+   "tools": [
+    "Run-and-gun shooting",
+    "Drone",
+    "Action cameras",
+    "Field production",
+    "Logistics"
+   ],
+   "media": [
+    {
+     "type": "yt",
+     "id": "S-gyK7PNOlI",
+     "poster": "https://i.ytimg.com/vi/S-gyK7PNOlI/maxresdefault.jpg"
+    }
+   ]
+  },
+  {
    "slug": "remote-control-bed",
    "c": "Earlier Builds",
    "t": "Remote Control Bed",
@@ -793,7 +823,7 @@ window.HV = {
    "hero": "Engineering things that end up on store shelves.",
    "aboutLabel": "ABOUT",
    "aboutTitle": "An engineer.",
-   "about": "Purdue multidisciplinary engineer. Toy mechanisms now sold at Walmart and Target, plus the vehicles and gadgets behind a 744K-subscriber YouTube channel, from CAD and laser-cut parts to welded assemblies tested in the field.",
+   "about": "Purdue multidisciplinary engineer. Toy mechanisms now sold at Walmart and Target, and Head of Production for a 744K-subscriber YouTube channel: vehicles and gadgets taken from CAD and laser-cut parts to welded assemblies tested in the field.",
    "servicesLabel": "CAPABILITIES",
    "services": [
     {
@@ -839,7 +869,7 @@ window.HV = {
    "hero": "Shooting and cutting stories millions of people watch.",
    "aboutLabel": "ABOUT",
    "aboutTitle": "A storyteller.",
-   "about": "Lead editor and shooter for Louis Weisz's 744K-subscriber YouTube channel: shop builds, multi-day field shoots, and every release edited end to end. Each shoot is planned like a product build: scoped, scheduled, and ready for whatever breaks on location.",
+   "about": "Head of Production for Louis Weisz's 744K-subscriber YouTube channel: lead editor and shooter on shop builds, multi-day field shoots, and every release edited end to end. Each shoot is planned like a product build: scoped, scheduled, and ready for whatever breaks on location.",
    "servicesLabel": "CAPABILITIES",
    "services": [
     {
